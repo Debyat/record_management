@@ -1,9 +1,12 @@
 <?php
-	session_start();
+    session_start();
+
+    // For Login
 	$username = $_POST['username'];
 	$password = $_POST['password'];
+    
 	if(ISSET($_POST['login'])){
-		include "server/server.php";
+		include "connection.php";
 		$query = $conn->query("SELECT *FROM `admin` WHERE `username` = '$username' && `password` = '$password'") or die(mysqli_error());
 		$fetch = $query->fetch_array();
 		$valid = $query->num_rows;
