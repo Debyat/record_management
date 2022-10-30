@@ -13,11 +13,11 @@
         'pwd'
     ];
 
-    $result = [];
+    $toryo = [];
 
     foreach ($data as $value) {
         $response = $conn->query("SELECT COUNT(*) as total FROM `$value` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
-        $result[$value] = $response->fetch_array();
+        $toryo[$value] = $response->fetch_array();
     }
 
 ?>
