@@ -1,7 +1,7 @@
 <?php
 	session_start();
-		if(!ISSET($_SESSION['user_id']))
-			{
-				header('location:index.php');
-			}
+	if(!ISSET($_SESSION['admin_id']))
+	{
+		header('location:index.php');
+	}
 ?>
